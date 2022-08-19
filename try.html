@@ -1,0 +1,123 @@
+<!DOCTYPE html> 
+<style>
+    *{
+        box-sizing: border-box;
+        padding: auto;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .gridbox{
+        display:grid;
+        grid-template-rows: auto  auto;
+        grid-template-columns: auto auto;
+    }
+    button
+    {
+        height:50px;
+        padding:2px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 3px;
+        margin-bottom: 2px;
+        
+    }
+    .gridbox{
+        background-color: white;
+        margin-left: 10%;
+        margin-right: 10%;
+        height:100%;
+        margin-bottom:5%;
+    }
+    html{
+        background-image: linear-gradient(purple,black,purple);
+        height: 100%; width: 100%;
+        color:white;
+    }
+    img{
+        height:70%;
+        width:50%;
+        margin-top:50px;
+        margin-bottom:-50px;
+        border:0px solid black;
+        border-image: url("beepptbg.jpg");
+        transition: all 1s;
+        opacity:1;
+    }
+    img:hover{
+        height:90%;
+        width:70%;
+        border:15px solid black;
+        border-image: url("beepptbg.jpg") 20 round;
+    }
+
+</style>
+<html>
+    <br><br><br>
+        <title>
+            Try
+        </title>
+            <div class="gridbox">
+                <button id="b1" onclick="func(this)">
+                    Click-b1
+                </button>
+                <button id="b2" onclick="func(this)">
+                    Click-b2
+                </button>
+                <button id="b3" onclick="func(this)">
+                    Click-b3
+                </button>
+                <button id="b4" onclick="func(this)">
+                    Click-b4
+                </button>
+                <img src="a.png" onmouseover="opaque(this)" onmouseleave="revert()">
+                <img src="b.png" onmouseover="opaque(this)" onmouseleave="revert()">
+                <img src="r.png" onmouseover="opaque(this)" onmouseleave="revert()">
+                <img src="m.png" onmouseover="opaque(this)" onmouseleave="revert()">
+                <img src="d.jfif" onmouseover="opaque(this)" onmouseleave="revert()">
+            </div>
+            <hr>
+            <p>some title</p>
+            <ul>
+                <li>H</li>
+                <li>I</li>
+                <li>J</li>
+            </ul>
+
+            <hr>
+            <p>some title</p>
+            <ul>
+                <li>K</li>
+                <li>L</li>
+                <li>M</li>
+            </ul>
+
+            <form>
+                Name:<br>
+                <input type="text">
+            </form>
+            <br><br><br>
+</html>
+<script>
+    function func(b)
+    {
+        b.innerHTML="Clicked Clicked Clicked Clicked";
+        b.style.height="120px";
+    }
+
+    function revert()
+    {
+        var imgs=document.getElementsByTagName("img");
+        for(let i=0; i<imgs.length; i++)
+        imgs[i].style.opacity="1";
+    }
+
+    function opaque(a)
+    {
+        var imgs=document.getElementsByTagName("img");
+        for(let i=0; i<imgs.length; i++)
+        {
+            if(imgs[i]!=a)
+            imgs[i].style.opacity="0.5";
+        }
+    }
+</script>
